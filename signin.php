@@ -18,7 +18,8 @@
     <div class="col-12 col-md-6 col-sm-8" style='margin:0 auto; '>
     <section class="form-simple">
 
-    <!--Form with header-->
+        <form action="forForm/signIn.php" method='POST'>
+            <!--Form with header-->
     <div class="card">
 
         <!--Header-->
@@ -36,19 +37,19 @@
             <!--Body-->
             <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
-                <input type="text" id="Form-email4" class="form-control">
+                <input type="email" id="Form-email4" name='email' class="form-control">
                 <label for="Form-email4">Your email</label>
             </div>
 
             <div class="md-form pb-3">
             <i class="fa fa-lock prefix grey-text"></i>
-                <input type="password" id="Form-pass4" class="form-control">
+                <input type="password" id="Form-pass4" name='pass' class="form-control">
                 <label for="Form-pass4">Your password</label>
                 <p class="font-small grey-text d-flex justify-content-end">Forgot <a href="#" class="dark-grey-text font-bold ml-1"> Password?</a></p>
             </div>
 
             <div class="text-center mb-4">
-                <button type="button" class="btn btn-danger btn-block z-depth-2"> <i class='fa  fa-key' ></i>  Login </button>
+                <button type="submit" class="btn btn-danger btn-block z-depth-2"> <i class='fa  fa-key' ></i>  Login </button>
             </div>
             <p class="font-small grey-text d-flex justify-content-center">Don't have an account? <a href="signup.php" class="dark-grey-text font-bold ml-1"> Sign up</a></p>
 
@@ -56,8 +57,10 @@
 
     </div>
     <!--/Form with header-->
+        
+        </form>
 
-</section>
+    </section>
     
     
     </div>

@@ -1,3 +1,8 @@
+
+
+
+
+
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg special-color-dark
 
@@ -33,6 +38,18 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> อุปกรณ์โยคะ</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">ดัมเบล</a>
+                    <a class="dropdown-item" href="#">บอดีเวท</a>
+                    <a class="dropdown-item" href="#">บาร์เบล</a>
+                    <a class="dropdown-item" href="#">ลูกบอลน้ำหนัก</a>
+                    
+                    <a class="dropdown-item" href="#">เชือก Battle Ropes </a>
+                    
+                </div>
+            </li>
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cardio</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">ลู่วิ่งไฟฟ้า / Treadmill</a>
@@ -40,6 +57,11 @@
                     <a class="dropdown-item" href="#">อุปกรณ์ ต่างๆ</a>
                 </div>
             </li>
+
+            
+
+
+            
             <li class="nav-item ">
                 <a class="nav-link" href="#">วีดีโอแนะนำ <span class="sr-only">(current)</span></a>
             </li>
@@ -55,11 +77,14 @@
 
         <?php 
      
-        if($_SESSION['user']){
-            $user =$_SESSION['user'];
-            echo "<li class='nav-item'><a href='#' class='nav-link waves-effect waves-light'>Hello Sr. $user </a></li>";
-        }else{
+        if(!isset($_SESSION['user']) ){
             echo "<li class='nav-item'><a href='signin.php' class='nav-link waves-effect waves-light'><i class='fa fa-lock'></i></a></li>";
+        }else{
+           
+
+            $user = $_SESSION['user'];
+            echo "<li class='nav-item'><a href='#' class='nav-link waves-effect waves-light'>Hello Sr. $user </a></li>
+            <li class='nav-item'><a href='forForm/logout.php' class='nav-link waves-effect waves-light'>Logout </a></li>";
         }
             
         
