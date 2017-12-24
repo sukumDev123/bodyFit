@@ -1,6 +1,6 @@
 
 <?php
- include_once('menus/menu.php');   
+ 
  $menus = new menu;
  
     $name_type = $menus->selectMenus();
@@ -11,7 +11,7 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg special-color-dark
 
- navbar-dark indigo fixed-top scrolling-navbar " >
+ navbar-dark indigo  scrolling-navbar " >
 
    <div class="container">
      <!-- Navbar brand -->
@@ -58,7 +58,7 @@
         <!-- Links -->
        
         <!-- Search form -->
-       <ul class='navbar-nav ml-auto nav-flex-icons'>
+       <div class='navbar-nav ml-auto nav-flex-icons'>
         
 
         
@@ -71,22 +71,25 @@
         }else{
             if($_SESSION['status'] == "admin"){
                 $status = "Admin";
-                $href = 'null';
+                $href = 'admin/coreAdmin.php';
             }else{
                 $status = "User";
                 $href = 'null';
             }
             $user = $_SESSION['user'];
-            echo "<li class='nav-item '><a href='#' class='nav-link waves-effect waves-light'>Hello Sr. $user : $status </a></li>
+            echo "<li class='nav-item '><a href=' ".$href." ' class='nav-link waves-effect waves-light'>Hello Sr. $user : $status </a></li>
             <li class='nav-item '><a href='forForm/logout.php' class='nav-link waves-effect waves-light danger-color ' style='font-weight:bold;'>Logout </a></li>";
         }  
         ?>
+         <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> </a>
+         <div class="dropdown-menu dropdown-primary primary-color special-color-dark" aria-labelledby="navbarDropdownMenuLink">
+             
+             
+         </div>
+     </li>
 
-
-
-
-
-       </ul>
+       </div>
     </div>
     <!-- Collapsible content -->
    </div>

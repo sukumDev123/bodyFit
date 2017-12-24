@@ -1,3 +1,5 @@
+<?php  include_once('menus/menu.php');   ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

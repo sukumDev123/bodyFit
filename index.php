@@ -1,5 +1,5 @@
 <?php
-
+    include_once('menus/menu.php');  
     session_start(); 
    
 ?>
@@ -18,152 +18,149 @@
 <body>
 
 <?php require_once 'hf/header.php' ?>
-
-
-<div class="container-fluid p-3  grey lighten-2 jarallax " data-jarallax-video="https://youtu.be/HGarDR0Cn4Y" >
-<div class="container " >
-<div class="d-flex align-items-center d-flex justify-content-center"  style="height: 600px">
-            <div class="row mt-5">
-                <div class="col-md-12 wow fadeIn mb-3">
-                    <div class="intro-info-content text-center">
-                        <h1 class="display-1 mb-2 wow fadeInDown" style='color:white' data-wow-delay="0.3s">Body  <a class="indigo-text font-bold">Fit</a></h1>
-                        <h5 class="font-up mb-3 mt-1 font-bold wow fadeIn"  style='color:white' data-wow-delay="0.4s">บริการ อุปกรณ์ ออกกำลังกาย </h5>
-                        <a class="btn stylish-color btn-lg wow fadeIn" data-wow-delay="0.4s">ดูสินค้าทั่งหมด</a> 
-                </div>
-            </div>
-        </div>
-   
+<div class="container p-3 bkk">
+<div class="col-12 col-lg-4 col-sm-6" style='margin:auto;' >
+<div class="md-form" >
+    <i class="fa fa-search prefix"></i>
+    <input type="text" id="form-search" class="form-control">
+    <label for="form-search">Search...</label>
 </div>
-
-
 </div>
 </div>
 
-<div class="container p-3">
-้<h1>สินค้าแนะนำ</h1>
- <div class="row">
-   <div class="col-12 col-sm-6 col-lg-4">
-            <!--Card Wider-->
-        <div class="card card-cascade wider">
-
-            <!--Card image-->
-            <div class="view overlay hm-white-slight hm-zoom">
-                <img style='height:200px;width:70%;margin:auto;' src="img/photo4.jpg" class="img-fluid">
-                <a href="#!">
-                    <div class="mask"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-
-            <!--Card content-->
-            <div class="card-body text-center">
-                <!--Title-->
-                <h4 class="card-title"><strong>Alice Mayer</strong></h4>
-                <h5 class="indigo-text"><strong>Photographer</strong></h5>
-
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
+<div class="container p-3 bkk">
+    <div class="row">
+    
+    <div class="col-4" >
+        <div class="col-10" >
+            <div class="infor" style='box-shadow:0 5px 5px 1px rgba(0,0,0,0.1); '>
                 
-                <!--Linkedin-->
-                <a class="btn btn-unique" href='pageBuy.php' >สั่งซื้อ</a>
+            <ul class="list-group">
+                <li class="list-group-item">  
+                <h6 class="mb-2 mt-2 ml-4">
+                    <i class="fa fa-bars ">  </i>  
+                    <strong>   รายการเสริม</strong>
+                </h6>
+                <li class="list-group-item"> <a href="">สินค้าใหม่</a> </li>
+                <li class="list-group-item"> <a href="">สินค้าลดราคา</a> </li>
+                <li class="list-group-item"> <a class='text-while' href="">สินค้าแนะนำ</a> </li>
+          </ul>
 
-            </div>
-            <!--/.Card content-->
-
-        </div>
-        <!--1-->
-        
-
-
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-            <!--Card Wider-->
-        <div class="card card-cascade wider">
-
-            <!--Card image-->
-            <div class="view overlay hm-white-slight hm-zoom">
-            <img style='height:200px;width:70%;margin:auto;' src="img/photo5.jpg" class="img-fluid">
-                <a href="#!">
-                    <div class="mask"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-
-            <!--Card content-->
-            <div class="card-body text-center">
-                <!--Title-->
-                <h4 class="card-title"><strong>Alice Mayer</strong></h4>
-                <h5 class="indigo-text"><strong>Photographer</strong></h5>
-
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
+                <!---->
                 
-                <!--Linkedin-->
-                <a class="btn btn-unique">สั่งซื้อ</a>
-
             </div>
-            <!--/.Card content-->
-
         </div>
-        <!--1-->
-        
-
-
+    </div>
+    <div class="col-12 col-lg-8 col-sm-8 ">
+    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <!--First slide-->
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="img/photo10p.jpg" height='380'  alt="First slide">
         </div>
-        <!--/.Card Wider-->
-        <div class="col-12 col-sm-6 col-lg-4">
-            <!--Card Wider-->
-        <div class="card card-cascade wider">
-
-            <!--Card image-->
-            <div class="view overlay hm-white-slight hm-zoom">
-            <img style='height:200px;width:70%;margin:auto;' src="img/photo6.jpg" class="img-fluid">
-                <a href="#!">
-                    <div class="mask"></div>
-                </a>
-            </div>
-            <!--/Card image-->
-
-            <!--Card content-->
-            <div class="card-body text-center">
-                <!--Title-->
-                <h4 class="card-title"><strong>Alice Mayer</strong></h4>
-                <h5 class="indigo-text"><strong>Photographer</strong></h5>
-
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-
-                
-                <!--Linkedin-->
-                <a class="btn btn-unique">สั่งซื้อ</a>
-
-            </div>
-            <!--/.Card content-->
-
+        <!--/First slide-->
+        <!--Second slide-->
+        <div class="carousel-item">
+            <img class="d-block w-100"  src="img/photo13.jpg" height='380' alt="Second slide">
         </div>
-        <!--1-->
-        
-
-
+        <!--/Second slide-->
+        <!--Third slide-->
+        <div class="carousel-item">
+            <img class="d-block w-100"  src="img/photo14.jpg" height='380' alt="Third slide">
         </div>
-        <!--/.Card Wider-->
-        </div>
- </div>
+        <!--/Third slide-->
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+    </div>
+    
+    </div>
 
 </div>
 
+<div class="container p-3" style='margin-top:2%;'>
+    <div class="row">
+        <div class="col-12 col-lg-4 col-sm-6">
+        <div class="card">
+    <h3 class="card-header primary-color white-text">หลากหลายแบรณ์</h3>
+    <div class="card-body">
+        <h4 class="card-title">รวบรวมสิ่งที่ดีที่สุด</h4>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a class="btn btn-primary">Go view prodect</a>
+    </div>
+</div>
+</div>
+<div class="col-12 col-lg-8 col-sm-6 col-centered">
 
+            <div class="row text-center " >
+            <div class="col-4 ">
+                <img src="img/photo4.jpg" class='mw-100' alt="">
+            </div>
+            <div class="col-4">
+                <img src="img/photo5.jpg" class='mw-100'   alt="">
+            </div>
+            <div class="col-4">
+                <img src="img/photo7.jpg" class='mw-100'  alt="">
+            </div>
+        
+            </div>
+        </div>
+    </div>
 
+</div>
+<div class="container">
+<select style='border-style:none; padding:10px; '>
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+</select>
+<label>Example label</label>
+</div>
+<div class="container p-3" style='margin-top:2%;'>
 
+    <div class="row">
+        <div class="col-12 col-lg-4 col-sm-6">
+        for Item
+        </div>
+        <div class="col-12 col-lg-4 col-sm-6">
+        for Item
+        </div><div class="col-12 col-lg-4 col-sm-6">
+        for Item
+        </div>
+    </div>
 
-
-
-
+</div>
 <?php require_once 'hf/footer.php' ?>
 
 
 <script>
 
 new WOW().init();
+
+var showSub = () =>{
+    let showSub = document.getElementById('showSub');
+    showSub.style.display = 'block'; 
+}
 </script>
 </body>
 </html>
