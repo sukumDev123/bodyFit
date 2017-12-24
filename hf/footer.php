@@ -38,22 +38,19 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r">
                 <h6 class="title font-bold"><strong>Products</strong></h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><a href="#!">MDBootstrap</a></p>
-                <p><a href="#!">MDWordPress</a></p>
-                <p><a href="#!">BrandFlow</a></p>
-                <p><a href="#!">Bootstrap Angular</a></p>
+                
+                <?php
+                    for($io = 0 ; $io < count($name_type[0]) ; $io++){
+
+                        echo '<p><a href="#!"> '.$name_type[0][$io].'  </a></p>';
+                    }   
+                
+                ?>
             </div>
             <!--/.Second column-->
 
             <!--Third column-->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r">
-                <h6 class="title font-bold"><strong>Useful links</strong></h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p><a href="#!">Your Account</a></p>
-                <p><a href="#!">Become an Affiliate</a></p>
-                <p><a href="#!">Shipping Rates</a></p>
-                <p><a href="#!">Help</a></p>
-            </div>
+           
             <!--/.Third column-->
 
             <!--Fourth column-->

@@ -1,8 +1,7 @@
 <?php
-    session_start();
 
-
-
+    session_start(); 
+   
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php require_once 'link/link.php' ?>
 
-    <title>Document</title>
+    <title>BodyFit Company</title>
 </head>
 <body>
 

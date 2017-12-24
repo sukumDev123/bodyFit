@@ -13,7 +13,7 @@ $insert = "INSERT INTO user(name,email,pass) VALUES ('".$name."','".$email."', '
 $s = mysqli_query($conn,$insert);
 
 if(!$s){
-    
+   
 }else{
     $selet = "SELECT name FROM user WHERE name = '".$name."' ";
     $show = mysqli_query($conn,$selet);
