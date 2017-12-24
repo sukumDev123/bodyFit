@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="server/uploadImg.php" method='POST' enctype="multipart/form-data">
+        <input type="file" name="filUpload" id="">
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
