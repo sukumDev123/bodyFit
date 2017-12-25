@@ -1,7 +1,7 @@
 <?php
     include_once('menus/menu.php');  
     session_start(); 
-   
+    require 'conn.php';
 ?>
 
 <!DOCTYPE html>

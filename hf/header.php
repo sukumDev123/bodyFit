@@ -1,9 +1,9 @@
 
 <?php
+    
+     $menus = new menu;
  
- $menus = new menu;
- 
-    $name_type = $menus->selectMenus();
+    $name_type = $menus->selectMenus($conn);
 
 ?>
 
@@ -37,7 +37,7 @@
                     '<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> '.$name_type[0][$i].' </a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">';
-                             $sub_type = $menus->selectSub($name_type[1][$i]);
+                             $sub_type = $menus->selectSub($name_type[1][$i],$conn);
 
                             for($j = 0; $j < count($sub_type); $j++ ){
                                  echo '<a class="dropdown-item" href="#">'.$sub_type[$j].'</a>';

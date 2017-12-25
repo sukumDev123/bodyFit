@@ -1,7 +1,7 @@
 <?php
     Class menu{
-        public function selectMenus(){
-             require 'conn.php';
+        public function selectMenus($conn){
+           
             $select = "SELECT * FROM type";
             $mysqli_1 = mysqli_query($conn,$select);
             if($mysqli_1->num_rows > 0){
@@ -21,8 +21,8 @@
             }   
         }   
 
-        public function selectSub($value){
-            require 'conn.php';
+        public function selectSub($value,$conn){
+            //require 'conn.php';
             $select = "SELECT * FROM sub_type WHERE id_type= '".$value."' ";
             $mysqli_1 = mysqli_query($conn,$select);
             if($mysqli_1->num_rows > 0){
