@@ -40,10 +40,13 @@
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 
                 <?php
-                    for($io = 0 ; $io < count($name_type[0]) ; $io++){
+                    $sel = $menus->select($conn,"type");
+                   while($row = $sel->fetch_array()){
+                    echo '<p><a href="showViewType.php?id_type='.$row['id_type'].'"> '.$row['name_type'].'  </a></p>';
+                   }
 
-                        echo '<p><a href="#!"> '.$name_type[0][$io].'  </a></p>';
-                    }   
+                        
+                      
                 
                 ?>
             </div>

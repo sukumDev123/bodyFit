@@ -3,7 +3,7 @@
     
      $menus = new menu;
  
-    $name_type = $menus->selectMenus($conn);
+  
 
 ?>
 
@@ -30,27 +30,25 @@
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <!-- Dropdown -->
-            <?php
-            //Start Create Menus list
-                for($i = 0 ; $i < count($name_type[0]) ; $i++ ){
-                    echo 
-                    '<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> '.$name_type[0][$i].' </a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">';
-                             $sub_type = $menus->selectSub($name_type[1][$i],$conn);
-
-                            for($j = 0; $j < count($sub_type); $j++ ){
-                                 echo '<a class="dropdown-item" href="#">'.$sub_type[$j].'</a>';
-                            }
-
-                        echo "  
-
+           
+                <?php
+                    $sel = $menus->select($conn,"type");
+                    while($row = $sel->fetch_array()){      
+                ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <?php echo $row['name_type']; ?>  </a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <?php
+                            $sel2 = $menus->select($conn,"sub_type WHERE id_type=".$row['id_type']);
+                            while($row2 = $sel2->fetch_array()){     
+                        ?>
+                        <a class="dropdown-item" href="#"> <?php echo $row2['sub_Type'] ?> </a>
+                            <?php } ?>
                         </div>
-                    </li>";    
-                }
-            //End Create Manus List    
-            ?>
-            
+                    </li>   
+             <?php           
+                    }
+             ?>
             <li class="nav-item ">
                 <a class="nav-link" href="#">วีดีโอแนะนำ <span class="sr-only">(current)</span></a>
             </li>

@@ -2,6 +2,7 @@
     include_once('menus/menu.php');  
     session_start(); 
     require 'conn.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -139,14 +140,53 @@
 <div class="container p-3" style='margin-top:2%;'>
 
     <div class="row">
-        <div class="col-12 col-lg-4 col-sm-6">
-        for Item
-        </div>
-        <div class="col-12 col-lg-4 col-sm-6">
-        for Item
-        </div><div class="col-12 col-lg-4 col-sm-6">
-        for Item
-        </div>
+    
+    <?php
+        $se = $menus->select($conn,"product p INNER JOIN sub_type st ON p.id_subType = st.id_subType INNER JOIN type t ON st.id_type = t.id_type");
+        while($row = $se->fetch_array()){
+
+        
+    ?>
+       <div class="col-12 col-lg-4 col-sm-4">
+            <!--Card Wider-->
+<div class="card card-cascade wider">
+
+<!--Card image-->
+<div class="view overlay hm-white-slight">
+    <img style='height:200px;margin:auto;width:auto;' src="admin/img/<?php echo $row['photoFile'] ?>" class="img-fluid">
+    <a href="#!">
+        <div class="mask"></div>
+    </a>
+</div>
+<!--/Card image-->
+
+<!--Card content-->
+<div class="card-body text-center">
+    <!--Title-->
+    <h4 class="card-title"><strong>Alice Mayer</strong></h4>
+    <h5 class="indigo-text"><strong>Photographer</strong></h5>
+
+    <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
+
+    
+    <!--Linkedin-->
+    <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
+
+   
+
+</div>
+<!--/.Card content-->
+
+</div>
+<!--/.Card Wider-->
+
+
+       </div>
+        <?php
+        
+        }
+        ?>
+    
     </div>
 
 </div>

@@ -1,41 +1,19 @@
 <?php
     Class menu{
-        public function selectMenus($conn){
-           
-            $select = "SELECT * FROM type";
+        public function select($conn,$tableName){
+            $select = "SELECT * FROM ".$tableName;
             $mysqli_1 = mysqli_query($conn,$select);
-            if($mysqli_1->num_rows > 0){
-                $array = [];
-                $i = 0;
-                $numA = 0;
-                while($row = $mysqli_1->fetch_assoc()) {
-                    $name[$i] = $row['name_type'];
-                    $id_type[$i] = $row['id_type'];
-                    $i++;
-                }  
-                $array[0] = $name;
-                $array[1] = $id_type;
-                return $array; 
-            }else{
-                return "Empty";
-            }   
-        }   
+            return $mysqli_1;
 
-        public function selectSub($value,$conn){
-            //require 'conn.php';
-            $select = "SELECT * FROM sub_type WHERE id_type= '".$value."' ";
+        }
+        public function insert($conn,$str){
+            $insert = "INSERT INTO ".$str;
+            $my = mysqli_query($conn,$insert);
+        }
+        public function selectA($conn,$str,$a){
+            $select = "SELECT ".$a." FROM ".$str;
             $mysqli_1 = mysqli_query($conn,$select);
-            if($mysqli_1->num_rows > 0){
-                $subtype = [];
-                $i = 0;
-                while($row = $mysqli_1->fetch_assoc()) {
-                    $subtype[$i] = $row['sub_Type'];
-                    $i++;
-                }     
-                return $subtype; 
-            }else{
-                return "NULL";
-            }   
+            return $mysqli_1;
         }
     }
     

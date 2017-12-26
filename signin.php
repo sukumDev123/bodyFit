@@ -1,4 +1,7 @@
-<?php  include_once('menus/menu.php');   ?>
+<?php  
+require './menus/menu.php';   
+require './conn.php';
+?>
 
 
 <!DOCTYPE html>
