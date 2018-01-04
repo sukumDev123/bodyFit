@@ -36,13 +36,13 @@
                     while($row = $sel->fetch_array()){      
                 ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <?php echo $row['name_type']; ?>  </a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <?php echo $row['type_name']; ?>  </a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <?php
-                            $sel2 = $menus->select($conn,"sub_type WHERE id_type=".$row['id_type']);
+                            $sel2 = $menus->select($conn,"subtype WHERE id_type=".$row['id_type']);
                             while($row2 = $sel2->fetch_array()){     
                         ?>
-                        <a class="dropdown-item" href="#"> <?php echo $row2['sub_Type'] ?> </a>
+                        <a class="dropdown-item" href="#"> <?php echo $row2['name_subType'] ?> </a>
                             <?php } ?>
                         </div>
                     </li>   
@@ -67,7 +67,7 @@
         if(!isset($_SESSION['user']) ){
             echo "<li class='nav-item'><a href='signin.php' class='nav-link waves-effect waves-light'><i class='fa fa-lock'></i></a></li>";
         }else{
-            if($_SESSION['status'] == "admin"){
+            if($_SESSION['state'] == "admin"){
                 $status = "Admin";
                 $href = 'admin/coreAdmin.php';
             }else{

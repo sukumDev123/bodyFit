@@ -80,12 +80,12 @@ and open the template in the editor.
                         <select class="mdb-select" name='type_pro' id='showSe' >
                             <option value="" disabled selected>Choose your option</option>
                             <?php
-                                $ss = $menu->select($conn,"sub_type INNER JOIN type ON sub_type.id_type = type.id_type");
+                                $ss = $menu->select($conn,"subtype INNER JOIN type ON subtype.id_type = type.id_type");
                                 while($row = $ss->fetch_array()){       
                                 $keep = $row['id_type'];
                                    
                             ?>
-                                <option value="<?php echo $row['id_subType'] ?>"><?php echo $row['name_type'] .' - '. $row['sub_Type']; ?></option>
+                                <option value="<?php echo $row['id_subType'] ?>"><?php echo $row['type_name'] .' - '. $row['name_subType']; ?></option>
                             <?php
                                 
                                 }

@@ -7,7 +7,7 @@ require '../../menus/menu.php';
 $menu = new menu;
 
 if(isset($_POST['type_pro'])){
-    $show = $menu->select($conn, "sub_type WHERE id_subType=".intval($_POST['type_pro']) );
+    $show = $menu->select($conn, "subtype WHERE id_subType=".intval($_POST['type_pro']) );
     $row = $show->fetch_array();
     $id_type = $row['id_type'];
     $name = $_POST['name_pro'];
@@ -19,7 +19,7 @@ if(isset($_POST['type_pro'])){
     {
         echo "Copy/Upload Complete<br>";
         $file = $_FILES['filUpload']['name'];
-        $s = $menu->insert($conn,"product(name_pro,detail,photoFile,id_type,id_subType,price,date_now)VALUES( '$name' , '$de' , '$file' , '$id_type' ,'$sub_T','$price',NOW() )");   
+        $s = $menu->insert($conn,"products(name_product,detail_product,photo_product,id_type,id_subType,price_product)VALUES( '$name' , '$de' , '$file' , '$id_type' ,'$sub_T','$price' )");   
         if($s){
             echo "uploads...";
         }

@@ -9,3 +9,4 @@
    <scrip  src="link/mdboot/mdboot/js/bootstrap.js"></script>
    <script src="link/mdboot/mdboot/js/mdb.js"></script>
    <script src="link/compiled.min/compiled.min.js"></script>
+   

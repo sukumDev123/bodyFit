@@ -1,4 +1,7 @@
-<?php  include_once('menus/menu.php');   ?>
+<?php  
+include_once('menus/menu.php');
+require "conn.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">

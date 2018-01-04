@@ -76,19 +76,19 @@ and open the template in the editor.
 <!--Table body-->
 <tbody>
     <?php 
-    $show = $menu->selectA($conn,'product INNER JOIN sub_type ON product.id_subType = sub_type.id_subType INNER JOIN type t ON product.id_type = t.id_type','product.id_detail,product.name_pro,product.photoFile,sub_type.sub_Type,t.name_type,product.price,product.date_now');
+    $show = $menu->select($conn,'products INNER JOIN subtype ON products.id_subType = subtype.id_subType INNER JOIN type t ON products.id_type = t.id_type');
     while($row = $show->fetch_array()){
 
     
     ?>
     <tr>
-        <th scope="row"><?php echo $row['id_detail']; ?></th>
-        <th ><?php echo $row['name_pro']; ?></> </th>
+        <th scope="row"><?php echo $row['id_product']; ?></th>
+        <th ><?php echo $row['name_product']; ?></> </th>
        
-        <th ><?php echo $row['name_type']; ?></th>
-        <th ><?php echo $row['sub_Type']; ?></th>
-        <th ><?php echo $row['price']; ?></th>
-        <th ><?php echo $row['date_now']; ?></th>
+        <th ><?php echo $row['type_name']; ?></th>
+        <th ><?php echo $row['name_subType']; ?></th>
+        <th ><?php echo $row['price_product']; ?></th>
+        <th ><?php echo $row['created_at']; ?></th>
         <th ><?php echo 'แก้ไข'; ?></th>
         
     </tr>

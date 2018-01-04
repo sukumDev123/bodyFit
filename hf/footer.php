@@ -42,7 +42,7 @@
                 <?php
                     $sel = $menus->select($conn,"type");
                    while($row = $sel->fetch_array()){
-                    echo '<p><a href="showViewType.php?id_type='.$row['id_type'].'"> '.$row['name_type'].'  </a></p>';
+                    echo '<p><a href="showViewType.php?id_type='.$row['id_type'].'"> '.$row['type_name'].'  </a></p>';
                    }
 
                         
