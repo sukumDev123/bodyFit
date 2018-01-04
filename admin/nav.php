@@ -60,7 +60,7 @@
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
                 
                 <li class="nav-item">
-                    <a class="nav-link"><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block"><?php echo  $user; ?></span></a>
+                    <a class="nav-link"><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block"> <?php echo $_SESSION['user'] ; ?></span></a>
                 </li>
                
             </ul>

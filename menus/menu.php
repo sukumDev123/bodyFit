@@ -15,6 +15,10 @@
             $mysqli_1 = mysqli_query($conn,$select);
             return $mysqli_1;
         }
+        public function update($conn,$upload){
+            $update = 'UPDATE '.$upload;
+            $mysqli_1 = mysqli_query($conn,$update);
+        }
     }
     
     

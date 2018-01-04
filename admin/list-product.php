@@ -89,7 +89,7 @@ and open the template in the editor.
         <th ><?php echo $row['name_subType']; ?></th>
         <th ><?php echo $row['price_product']; ?></th>
         <th ><?php echo $row['created_at']; ?></th>
-        <th ><?php echo 'แก้ไข'; ?></th>
+        <th > <a href="edit.php?id_product=<?php echo $row['id_product']; ?> "><?php echo 'แก้ไข'; ?></a> </th>
         
     </tr>
    <?php

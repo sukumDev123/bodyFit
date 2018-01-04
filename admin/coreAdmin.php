@@ -130,19 +130,13 @@ and open the template in the editor.
        
 
          new WOW().init();
+          
         // SideNav Initialization
         $(".button-collapse").sideNav();
         $('.mdb-select').material_select();
 
 
-        var showEle = (add)=>{
-            $.each(items, function (i, item) {
-            $('#mySelect').append($('<option>', { 
-                value: item.value,
-                text : item.text 
-                 }));
-            });
-        };
+     
      
     </script>
      

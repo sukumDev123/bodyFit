@@ -7,7 +7,11 @@
 
 ?>
 
-
+<style>
+h1,h2,p,strong,a,h5,h6{
+    font-family: 'Kanit', sans-serif;
+}
+</style>
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg special-color-dark
 
@@ -36,13 +40,13 @@
                     while($row = $sel->fetch_array()){      
                 ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <?php echo $row['type_name']; ?>  </a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false"> <?php echo $row['type_name']; ?>  </a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <?php
                             $sel2 = $menus->select($conn,"subtype WHERE id_type=".$row['id_type']);
                             while($row2 = $sel2->fetch_array()){     
                         ?>
-                        <a class="dropdown-item" href="#"> <?php echo $row2['name_subType'] ?> </a>
+                        <a class="dropdown-item" href="viewShow.php?pages=1&id_type=<?php echo $row['id_type']; ?>&id_subType=<?php echo $row2['id_subType'] ?>  "> <?php echo $row2['name_subType'] ?> </a>
                             <?php } ?>
                         </div>
                     </li>   

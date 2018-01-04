@@ -19,7 +19,7 @@ if(isset($_POST['type_pro'])){
     {
         echo "Copy/Upload Complete<br>";
         $file = $_FILES['filUpload']['name'];
-        $s = $menu->insert($conn,"products(name_product,detail_product,photo_product,id_type,id_subType,price_product)VALUES( '$name' , '$de' , '$file' , '$id_type' ,'$sub_T','$price' )");   
+        $s = $menu->insert($conn,"products(name_product,detail_product,photo_product,id_type,id_subType,price_product,created_at,updated_at)VALUES( '$name' , '$de' , '$file' , '$id_type' ,'$sub_T','$price',NOW(),NOW() )");   
         if($s){
             echo "uploads...";
         }
