@@ -76,7 +76,13 @@ and open the template in the editor.
 <!--Table body-->
 <tbody>
     <?php 
-    $show = $menu->select($conn,'products INNER JOIN subtype ON products.id_subType = subtype.id_subType INNER JOIN type t ON products.id_type = t.id_type');
+    $end = 10;
+    if(isset($_GET['pages']))
+        $pages = $_GET['pages'];
+    else 
+        $pages = 1;
+    $start = ($pages - 1) * $end;
+    $show = $menu->select($conn,'products INNER JOIN subtype ON products.id_subType = subtype.id_subType INNER JOIN type t ON products.id_type = t.id_type order by id_product desc limit '.$start.','.$end.' ');
     while($row = $show->fetch_array()){
 
     
@@ -90,7 +96,7 @@ and open the template in the editor.
         <th ><?php echo $row['price_product']; ?></th>
         <th ><?php echo $row['created_at']; ?></th>
         <th > <a href="edit.php?id_product=<?php echo $row['id_product']; ?> "><?php echo 'แก้ไข'; ?></a> </th>
-        
+        <th > <a onclick='checkDelete("<?php echo $row['name_product']; ?>","<?php echo $row['id_product']; ?>")' ><?php echo 'ลบ'; ?></a> </th>
     </tr>
    <?php
     }
@@ -102,8 +108,60 @@ and open the template in the editor.
             </div>
        
      </div>
-     
+     <div class="container">
+     <!--Pagination -->
+     <?php
+      $showa = $menu->select($conn,'products ');
 
+      $tota_renum = mysqli_num_rows($showa);
+      $total_page = ceil($tota_renum/$end);
+     if($pages <= 1) $prene = 'disabled';
+     else if($pages > 0) $prene = '';
+     if($pages >= $total_page ) $nextPre = 'disabled';
+     else $nextPre = '';
+     if($pages == $total_page) $endpages = 'disabled';
+     else if($total_page == 0) $endpages = 'disabled';
+     ?>
+<nav class="my-4" style='margin: 0 auto'>
+ <ul class="pagination pagination-circle pg-blue mb-0">
+
+     <!--First-->
+     <li class="page-item <?php echo  $prene; ?>"><a class="page-link" href='?pages=<?php echo 1;  ?>'>First</a></li>
+
+     <!--Arrow left-->
+     <li class="page-item <?php echo  $prene; ?> ">
+         <a class="page-link" aria-label="Previous"  href='?pages=<?php echo intval($_GET['pages'])-1 ?>'>
+             <span aria-hidden="true">&laquo;</span>
+             <span class="sr-only">Previous</span>
+         </a>
+     </li>
+
+     <!--Numbers-->
+     <?php
+    
+     for($i = 1 ; $i <= $total_page;$i++){     
+     ?>
+     <li class="page-item active"><a href='?pages=<?php echo $i ?>' class="page-link"><?php echo $i ?></a></li>
+    <?php
+     }
+    ?>
+
+     <!--Arrow right-->
+     <li class="page-item  <?php echo $nextPre; ?>">
+        
+         <a class="page-link" aria-label="Next" href='?pages=<?php echo intval($_GET['pages'])+1 ?>' >
+             <span aria-hidden="true">&raquo;</span>
+             <span class="sr-only">Next</span>
+         </a>
+         
+     </li>
+
+     <!--First-->
+     <li class="page-item <?php echo $endpages; ?>"><a class="page-link" href='?pages=<?php echo $total_page;  ?>'>Last</a></li>
+
+ </ul>
+</nav>
+</div>
     </main>
     <!--Main Layout-->
     
@@ -113,7 +171,11 @@ and open the template in the editor.
     <script type="text/javascript" src="../link/mdboot/mdboot/js/popper.min.js"></script>
     
     <script>
-       
+       var checkDelete = ($ech,$id_P)=>{
+           if( confirm('ต้องการลบ ' + $ech + ' ใช่หรื่อไม่') )
+                window.location.href='./server/delete.php?id_product='+$id_P;
+        
+       }
 
          new WOW().init();
         // SideNav Initialization

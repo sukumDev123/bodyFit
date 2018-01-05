@@ -96,7 +96,7 @@ $start = ($pages - 1) * $end;
                    <h4 class="font-bold blue-text">
                        <strong>5200.00  Bath.</strong>
                    </h4>
-                   <a class="btn btn-green btn-rounded btn-md">เพิ่มรายการ</a>
+                   <a class="btn btn-green btn-rounded btn-md" onclick='add("<?php echo $row['id_product'] ?>","<?php echo $row['name_product'] ?>","<?php echo $row['price_product'] ?>")' >เพิ่มรายการ</a>
                </div>
                <!--Card content-->
            
@@ -163,6 +163,8 @@ $start = ($pages - 1) * $end;
 
     </ul>
 </nav>
+</div>
+
 <?php require 'hf/footer.php'; ?>
 </body>
 </html>

@@ -8,11 +8,38 @@
 ?>
 
 <style>
-h1,h2,p,strong,a,h5,h6{
+h1,h2,p,strong,a,h5,h6,button{
     font-family: 'Kanit', sans-serif;
+}
+#shop_add{
+    height:200px;
+    overflow:auto;
+    overflow-x : none;
+}
+#button_a{
+    border-style:none;
+    width:100%;
+    background:#ff4444;
+}
+#shopProduct {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding:10px;    
+}
+#manu_asdd{
+    position:fixed;
+    width:40%;
+    right:0px;
+    top:10%;
+    z-index:10;
+    background: #ffffff;
+    box-shadow:0 0 3px 5px rgba(0,0,0,0.1);
+    padding:10px;
 }
 </style>
 <!--Navbar-->
+
+
+
 <nav class="navbar navbar-expand-lg special-color-dark
 
  navbar-dark indigo  scrolling-navbar " >
@@ -99,3 +126,4 @@ h1,h2,p,strong,a,h5,h6{
 </nav>
 <!--/.Navbar-->
                 
+<?php require 'shop.php'; ?>

@@ -103,7 +103,7 @@
 <!--Card content-->
 <div class="card-body text-center">
     <!--Title-->
-    <h5 class="card-title"><strong><?php echo $row['name_product']; ?></strong></h5>
+    <h5 class="card-title"><strong><?php echo $row['name_product']; ?></strong> <span class="badge red">New</span></h5>
     <!--Linkedin-->
     <a class="icons-sm " style='color:#00C851 '><i class="fa fa-plus"> </i></a>
 

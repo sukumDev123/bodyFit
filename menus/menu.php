@@ -19,6 +19,11 @@
             $update = 'UPDATE '.$upload;
             $mysqli_1 = mysqli_query($conn,$update);
         }
+        public function deleteP($conn,$delete){
+            $de = 'DELETE FROM '.$delete;
+            $mysqli = mysqli_query($conn,$de);
+            
+        }
     }
     
     
