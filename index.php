@@ -126,16 +126,9 @@
 
 </div>
 </div>
+</div>
+
 <?php require_once 'hf/footer.php' ?>
-
-
-
-
-
-
-<script type='text/javascript' src='angular/angular/angular.js' ></script>
-<script type='text/javascript' src='angular/module.js' ></script>
-
 <script>
 
 new WOW().init();

@@ -88,15 +88,16 @@ $start = ($pages - 1) * $end;
                    
                    <p style='height:50px;'>
                        <strong>
-                           <a href="?pages=1&id_type=1&id_subType=1&id_product=9" class="dark-grey-text">NIKE AIR ZOOM VOMERO 13                   <!-- <span class="badge badge-pill danger-color">NEW</span>-->
+                           <a href="?pages=<?php echo $pages ?>&id_type=<?php echo $row['id_type'] ?>&id_subType=<?php echo $row['id_subType'] ?>&id_product=<?php echo $row['id_product'] ?>" class="dark-grey-text"><?php echo $row['name_product']?><!-- <span class="badge badge-pill danger-color">NEW</span>-->
                            </a>
                        </strong>
                    </p>
                    
                    <h4 class="font-bold blue-text">
-                       <strong>5200.00  Bath.</strong>
+                       <strong><?php echo $row['price_product'] ?></strong>
                    </h4>
-                   <a class="btn btn-green btn-rounded btn-md" onclick='add("<?php echo $row['id_product'] ?>","<?php echo $row['name_product'] ?>","<?php echo $row['price_product'] ?>")' >เพิ่มรายการ</a>
+                   
+                   <a class="btn btn-green btn-rounded btn-md" href='?pages=<?php echo $pages ?>&id_type=<?php echo $row['id_type'] ?>&id_product_Buy=<?php echo $row['id_product'] ?>' >เพิ่มรายการ</a>
                </div>
                <!--Card content-->
            
@@ -164,7 +165,7 @@ $start = ($pages - 1) * $end;
     </ul>
 </nav>
 </div>
-
+</div>
 <?php require 'hf/footer.php'; ?>
 </body>
 </html>

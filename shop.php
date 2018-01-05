@@ -1,86 +1,64 @@
 <div class="container">
-    <script>
-        var product = [];
-        var total_price = 0;
-        var subT_id = [];
-        var subPrice_id = [];
-        
-        var num = 0;
-
-        var docs = ($ele)=>{
-            return document.getElementById($ele);
-        }
-        var cEle = ($ele)=>{
-            return document.createElement($ele);
-        }
-        var cText = ($ele) => {
-            return document.createTextNode($ele);
-        };
-        var add = (id,name,price) =>{      
-            docs('shop_add').innerHTML = ''; 
-            docs('shop_add_total').innerHTML = '';
-            subT_id.push(id);
-            total_price = parseInt(total_price) + parseInt(price);
-            product.push({
-                'id' : id,
-                'name':name,
-                'price': price
-            });
-                
-            for(var n = 0 ; n < product.length; n++){
-                let divv = cEle('div');
-                divv.id = 'shopProduct';
-                let parr = cEle('p');
-                let txt = cText('id : ' + product[n].id );
-                let parr2 = cEle('p');
-                let txt2 = cText('name : ' + product[n].name );
-                let parr3 = cEle('p');
-                let txt3 = cText('price : ' + product[n].price );
-                parr.appendChild(txt);
-                parr2.appendChild(txt2);
-                parr3.appendChild(txt3);
-                let butt = cEle('button');
-                butt.id = 'button_a';
-                butt.type='submit';
-                butt.onclick=()=>{
-                    
-                }
-                let t = cText('ลบ');
-                butt.appendChild(t);
-                docs('shop_add').appendChild(parr);
-                docs('shop_add').appendChild(parr2);
-                docs('shop_add').appendChild(parr3);
-                docs('shop_add').appendChild(butt);
-                
-            }
-
-            let price_r = cEle('p');
-            let text = cText('Total Price : ' + total_price );
-            price_r.appendChild(text);
-            docs('shop_add_total').appendChild(price_r);
-
-
-
-
-
-           
-        };
-        var unadd = (id,price) =>{
-
-            let sum = [];
-
-            console.log('unadd : ' + sum  );
-        };
-        
-    </script>
     <div clss='row'>
         <div class="col-12 col-md-4 col-sm-6 " id='manu_asdd'>
-
+        <?php require 'pooo.php' ?>
+            <h6>รายการซื้อ</h6>
             <div id='shop_add'>
-            </div>
+            <?php   
+                          if(!empty($_SESSION["shopping_cart"]))  
+                          {  
+                               $total = 0;  
+                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
+                               {  
+                          ?>  
+                            <div class='item_i' style='padding:0;border-bottom: 1px solid rgba(0,0,0,0.1);'>
+                                <p><?php echo $values['item_id'] ?></p>
+                                <p><?php echo $values['item_name'] ?></p>
+
+                                <p><?php echo $values['item_price'] ?></p>
+                                <p><?php echo $values['item_quantity'] ?></p>
+                                <a href="?action=delete&id_delete=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a>
+                                
+                            
+                            </div>
+                          <?php  
+                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
+                               }  
+                          ?>  
+                          </div>
             <div id='shop_add_total'>
-                
+                 <tr>  
+                    <td colspan="3" align="right">Total</td>  
+                    <td align="right">฿ <?php echo number_format($total, 2); ?></td>  
+                    <td>จำนวน : <?php echo count($_SESSION['shopping_cart']) ?> </td>  
+                </tr>  
+                <a href="viewTotalShop.php">ยืนยัน</a>
+            </div>
+
+                          <?php  
+                          } else{
+                              
+                          
+                          ?>  
+           <div id='shop_add_total'>
+                 <tr>  
+                    <td colspan="3" align="right">ไม่เจอรายการ</td>  
+                   
+                    
+                </tr>  
             </div>
         </div>
+        <?php
+                          }
+        ?>
     </div>
 </div>
+<style>
+.item_i p{
+    padding:0px;
+    margin:0;
+}
+#manu_asdd{
+    display:none;
+}
+</style>

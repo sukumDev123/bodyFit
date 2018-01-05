@@ -149,7 +149,7 @@ $showPro = $menus->select($conn,"products p inner join subtype s on p.id_subtype
         <h4 class="font-bold blue-text">
             <strong><?php echo $row['price_product']; ?>  Bath.</strong>
         </h4>
-        <a class="btn btn-green btn-rounded btn-md">เพิ่มรายการ</a>
+        <a class="btn btn-green btn-rounded btn-md" href='?pages=<?php echo $pages ?>&id_type=<?php echo $row['id_type'] ?>&id_subType=<?php echo $row['id_subType'] ?>&id_product_Buy=<?php echo $row['id_product'] ?>' >เพิ่มรายการ</a>
     </div>
     <!--Card content-->
 
@@ -218,7 +218,7 @@ $showPro = $menus->select($conn,"products p inner join subtype s on p.id_subtype
      
      </div>
     </div>
-                
+                </div>
     <?php require 'hf/footer.php'; ?>
 </body>
 </html>

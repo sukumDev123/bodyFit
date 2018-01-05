@@ -39,7 +39,6 @@ h1,h2,p,strong,a,h5,h6,button{
 <!--Navbar-->
 
 
-
 <nav class="navbar navbar-expand-lg special-color-dark
 
  navbar-dark indigo  scrolling-navbar " >
@@ -110,12 +109,9 @@ h1,h2,p,strong,a,h5,h6,button{
             <li class='nav-item '><a href='forForm/logout.php' class='nav-link waves-effect waves-light danger-color ' style='font-weight:bold;'>Logout </a></li>";
         }  
         ?>
-         <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> </a>
-         <div class="dropdown-menu dropdown-primary primary-color special-color-dark" aria-labelledby="navbarDropdownMenuLink">
-             
-             
-         </div>
+         <li class="nav-item dropdown" onclick='showShop()' >
+         <a class="nav-link "  aria-haspopup="true" aria-expanded="false"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> </a>
+        
      </li>
 
        </div>
@@ -127,3 +123,21 @@ h1,h2,p,strong,a,h5,h6,button{
 <!--/.Navbar-->
                 
 <?php require 'shop.php'; ?>
+
+<script>
+
+ var el = ($id) => {
+    return document.getElementById($id);
+ };
+
+ var showShop = () =>{
+
+     if(el('manu_asdd').style.display === 'none' ){
+        el('manu_asdd').style.display = 'block';
+     }else{
+        el('manu_asdd').style.display = 'none';
+         
+     }
+ }
+
+</script>

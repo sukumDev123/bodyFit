@@ -4,16 +4,28 @@ require '../../conn.php';
 require '../../menus/menu.php';
 $menus = new menu;
 
-$menus->deleteP($conn,"products where id_product='".$_GET['id_product']."' ");
-echo "
+$selec = $menus->selectA($conn,'products where id_product="'.$_GET['id_product'].'" ','photo_product');
 
-<script>
+$row = $selec->fetch_array();
 
-alert('ลบเรียบร้อยแล้ว');
-window.location.href='../list-product.php';
-</script>
+$file = '../img/'.$row['photo_product'];
 
-";
+if(!unlink($file)){
+    echo 'not move';
+}
+else{
+    $menus->deleteP($conn,"products where id_product='".$_GET['id_product']."' ");
+    echo "
+    
+    <script>
+    
+    alert('ลบเรียบร้อยแล้ว');
+    window.location.href='../list-product.php';
+    </script>
+    
+    ";
+}
+
 
 
 ?>

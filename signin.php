@@ -1,6 +1,9 @@
 <?php  
+session_start();
 require './menus/menu.php';   
 require './conn.php';
+if(isset($_SESSION['user']))
+    header('location:index.php');
 ?>
 
 
@@ -76,7 +79,7 @@ require './conn.php';
 </div>
 
 <div style=' padding:30px; '></div>
-
+</div>
 <?php require_once 'hf/footer.php' ?>
 
 </body>
